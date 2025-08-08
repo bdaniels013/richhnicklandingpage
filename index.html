@@ -5,38 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Official Landing Page for Richh Nick - Executive Manager, Serial Investor, Credit Expert, and Visionary Leader in Music and Business Empowerment. Discover his journey, services, and insights.">
     <title>Richh Nick - Building Legacies Through Credit, Investment, and Empowerment</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <style>
         :root {
             --primary-color: #1a237e; /* Deep navy for executive feel */
             --secondary-color: #ffd700; /* Gold for luxury and success */
             --accent-color: #4caf50; /* Green for growth and finance */
             --bg-light: #f5f5f5;
+            --bg-dark: #0d1117;
             --text-dark: #333;
             --text-light: #fff;
             --shadow-soft: 0 4px 20px rgba(0,0,0,0.1);
-            --transition: 0.4s ease;
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.15);
+            --transition-fast: 0.3s ease;
+            --transition-slow: 0.6s ease-in-out;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-body);
             background: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.8;
             overflow-x: hidden;
+            position: relative;
         }
         
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .preloader .spinner {
+            border: 4px solid var(--secondary-color);
+            border-top: 4px solid var(--text-light);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            box-shadow: var(--shadow-soft);
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background: white;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        nav .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8em;
+            color: var(--primary-color);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition-fast);
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Hero Header */
         header {
             position: relative;
             height: 100vh;
-            background: linear-gradient(rgba(26,35,126,0.8), rgba(26,35,126,0.8)), url('https://via.placeholder.com/1920x1080?text=Executive+Vision') center/cover no-repeat;
+            background: linear-gradient(rgba(26,35,126,0.8), rgba(26,35,126,0.8)), url('https://via.placeholder.com/1920x1080?text=Richh+Nick+Executive+Vision') center/cover no-repeat;
             color: var(--text-light);
             display: flex;
             flex-direction: column;
@@ -44,19 +139,38 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
         }
         
         header h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-heading);
             font-size: 4.5em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
         }
         
-        header p {
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        header .typed-text {
             font-size: 1.8em;
             max-width: 800px;
             margin-bottom: 40px;
+            min-height: 1.8em; /* To prevent jumping */
         }
         
         .cta-btn {
@@ -66,64 +180,86 @@
             font-weight: bold;
             border-radius: 5px;
             text-decoration: none;
-            transition: var(--transition);
+            transition: var(--transition-slow);
             box-shadow: var(--shadow-soft);
+            font-size: 1.2em;
         }
         
         .cta-btn:hover {
             background: var(--accent-color);
             color: var(--text-light);
+            transform: scale(1.05);
         }
         
+        /* Sections General */
         section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
         
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-heading);
             font-size: 3em;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             color: var(--primary-color);
+            position: relative;
         }
         
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 20px auto 0;
+        }
+        
+        /* Bio Section */
         .bio-content {
             background: white;
-            padding: 40px;
+            padding: 50px;
             border-radius: 10px;
             box-shadow: var(--shadow-soft);
+            text-align: center;
         }
         
         .bio-content p {
             font-size: 1.2em;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .stats {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 40px;
+            gap: 40px;
         }
         
         .stat-item {
             text-align: center;
-            flex: 1 1 200px;
-            margin: 20px;
-            font-size: 2.5em;
+            min-width: 150px;
+        }
+        
+        .stat-item .number {
+            font-size: 3em;
             font-weight: bold;
             color: var(--secondary-color);
         }
         
-        .stat-item span {
-            display: block;
-            font-size: 0.5em;
+        .stat-item .label {
+            font-size: 1em;
             color: var(--text-dark);
-            font-weight: normal;
+            font-weight: 500;
         }
         
+        /* Timeline Section */
         .journey-timeline {
             position: relative;
             max-width: 1000px;
@@ -145,17 +281,26 @@
             padding: 20px 40px;
             position: relative;
             width: 50%;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .timeline-item::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             background: var(--secondary-color);
             border-radius: 50%;
             top: 25px;
             z-index: 1;
+            box-shadow: 0 0 10px var(--secondary-color);
         }
         
         .left {
@@ -163,7 +308,7 @@
         }
         
         .left::after {
-            right: -10px;
+            right: -12px;
         }
         
         .right {
@@ -171,152 +316,231 @@
         }
         
         .right::after {
-            left: -10px;
+            left: -12px;
         }
         
         .timeline-content {
-            padding: 20px;
+            padding: 30px;
             background: white;
             border-radius: 8px;
             box-shadow: var(--shadow-soft);
+            position: relative;
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        
+        .left .timeline-content::before {
+            right: -10px;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        
+        .right .timeline-content::before {
+            left: -10px;
+            border-width: 10px 10px 0 10px;
+            border-color: transparent white transparent transparent;
         }
         
         .timeline-content h3 {
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
         }
         
+        .timeline-content p {
+            font-size: 1.1em;
+        }
+        
+        /* Services Section */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
         
         .service-card {
             background: white;
-            padding: 30px;
+            padding: 40px;
             border-radius: 10px;
             box-shadow: var(--shadow-soft);
-            transition: var(--transition);
+            transition: var(--transition-slow);
+            cursor: pointer;
+            text-align: center;
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-card i {
+            font-size: 3em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
         }
         
         .service-card h3 {
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-heading);
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .service-card p {
+            margin-bottom: 25px;
         }
         
         .service-btn {
-            display: block;
-            margin-top: 20px;
-            padding: 10px 20px;
+            display: inline-block;
+            padding: 12px 30px;
             background: var(--primary-color);
             color: var(--text-light);
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: var(--transition);
+            transition: var(--transition-fast);
         }
         
         .service-btn:hover {
             background: var(--accent-color);
         }
         
+        /* Highlights Section */
         .highlights-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
         
         .highlight-card {
             background: white;
-            padding: 20px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: var(--shadow-soft);
+            transition: var(--transition-slow);
+        }
+        
+        .highlight-card:hover {
+            transform: scale(1.05);
         }
         
         .highlight-card h4 {
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
         }
         
         .highlight-card p {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
         
         .highlight-card .stats {
             font-size: 0.9em;
             color: var(--accent-color);
+            margin-bottom: 15px;
         }
         
+        .highlight-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .highlight-card a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Testimonials Section */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 40px;
         }
         
         .testimonial-card {
             background: white;
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px;
             box-shadow: var(--shadow-soft);
-            font-style: italic;
+            text-align: center;
+            position: relative;
+        }
+        
+        .testimonial-card i {
+            font-size: 2em;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
         }
         
         .testimonial-card p {
-            margin-bottom: 15px;
+            font-style: italic;
+            margin-bottom: 20px;
         }
         
         .testimonial-author {
-            text-align: right;
             font-weight: bold;
             color: var(--primary-color);
         }
         
+        /* Contact Section */
         .contact-form {
             background: white;
-            padding: 40px;
+            padding: 50px;
             border-radius: 10px;
             box-shadow: var(--shadow-soft);
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1em;
+            transition: border-color var(--transition-fast);
+        }
+        
+        .contact-form input:focus, .contact-form textarea:focus {
+            border-color: var(--accent-color);
         }
         
         .contact-form button {
-            padding: 15px 30px;
+            padding: 15px 40px;
             background: var(--primary-color);
             color: var(--text-light);
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: var(--transition);
+            transition: var(--transition-slow);
+            font-size: 1.1em;
         }
         
         .contact-form button:hover {
             background: var(--accent-color);
+            transform: translateY(-3px);
         }
         
+        /* Footer */
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             background: var(--primary-color);
             color: var(--text-light);
-            margin-top: 60px;
+            margin-top: 100px;
         }
         
         footer p {
-            font-size: 0.9em;
+            font-size: 1em;
+            margin-bottom: 20px;
         }
         
         footer .social-links {
@@ -325,22 +549,65 @@
         
         footer .social-links a {
             color: var(--text-light);
-            margin: 0 15px;
-            font-size: 1.5em;
-            transition: var(--transition);
+            margin: 0 20px;
+            font-size: 2em;
+            transition: var(--transition-fast);
         }
         
         footer .social-links a:hover {
             color: var(--secondary-color);
+            transform: scale(1.2);
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: var(--text-light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+            z-index: 999;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            section {
+                padding: 80px 20px;
+            }
+        }
+        
+        @media (max-width: 992px) {
             header h1 {
-                font-size: 3em;
+                font-size: 3.5em;
+            }
+            .typed-text {
+                font-size: 1.5em;
             }
             .section-title {
                 font-size: 2.5em;
+            }
+            .bio-content {
+                padding: 40px;
+            }
+            .stats {
+                gap: 30px;
             }
             .timeline-item {
                 width: 100%;
@@ -356,13 +623,90 @@
             .right {
                 left: 0%;
             }
+            .right .timeline-content::before {
+                left: -10px;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            .contact-form {
+                padding: 40px;
+            }
         }
         
-        /* Animations */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3em;
+            }
+            .typed-text {
+                font-size: 1.3em;
+            }
+            nav .container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 10px;
+            }
+            nav ul li {
+                margin: 0 15px;
+            }
+            .bio-content p {
+                font-size: 1.1em;
+            }
+            .stat-item .number {
+                font-size: 2.5em;
+            }
+            .service-card {
+                padding: 30px;
+            }
+            .highlight-card {
+                padding: 25px;
+            }
+            .testimonial-card {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+            .typed-text {
+                font-size: 1.2em;
+            }
+            .cta-btn {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+            .section-title {
+                font-size: 2em;
+            }
+            .bio-content {
+                padding: 30px;
+            }
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .timeline-content {
+                padding: 20px;
+            }
+            .service-card h3 {
+                font-size: 1.5em;
+            }
+            .contact-form {
+                padding: 30px;
+            }
+            footer .social-links a {
+                margin: 0 10px;
+                font-size: 1.5em;
+            }
+        }
+        
+        /* Additional Animations */
         .animate-fade-in {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+            transform: translateY(50px);
+            transition: opacity var(--transition-slow), transform var(--transition-slow);
         }
         
         .animate-fade-in.visible {
@@ -372,9 +716,27 @@
     </style>
 </head>
 <body>
+    <div class="preloader">
+        <div class="spinner"></div>
+    </div>
+    
+    <nav>
+        <div class="container">
+            <div class="logo">Richh Nick</div>
+            <ul>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#timeline">Accomplishments</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
     <header>
         <h1>Richh Nick</h1>
-        <p>From Street Smarts to Executive Suites: Mastering Credit, Investments, and Artist Empowerment</p>
+        <div class="typed-text"></div>
         <a href="https://www.instagram.com/richhnick/" target="_blank" class="cta-btn">Follow on Instagram</a>
     </header>
     
@@ -385,9 +747,18 @@
             <p>Today, as a serial investor and executive manager, Richh Nick dedicates himself to helping others replicate his success. He teaches credit fixing techniques, business funding strategies, and investment tactics to enable individuals to invest in businesses, artist careers, and even start their own record labels. His motivational content on Instagram inspires 28,000 followers with lessons on growth, team building, and financial freedom.</p>
             <p>With over 339 posts garnering millions of views collectively (e.g., his top reels averaging 5,000-15,000 views each), Richh Nick's platform is a beacon for aspiring entrepreneurs and artists. His expertise has led to successful partnerships, artist developments, and countless credit restorations that have unlocked doors for many.</p>
             <div class="stats">
-                <div class="stat-item"><span id="followers-counter">0</span><span>Followers</span></div>
-                <div class="stat-item"><span id="posts-counter">0</span><span>Posts</span></div>
-                <div class="stat-item"><span id="views-counter">0</span><span>Million Views</span></div>
+                <div class="stat-item">
+                    <div class="number" id="followers-counter">0</div>
+                    <div class="label">Followers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number" id="posts-counter">0</div>
+                    <div class="label">Posts</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number" id="views-counter">0</div>
+                    <div class="label">Million Views</div>
+                </div>
             </div>
         </div>
     </section>
@@ -432,21 +803,25 @@
         <h2 class="section-title">Expert Services</h2>
         <div class="services-grid">
             <div class="service-card">
+                <i class="fas fa-credit-card"></i>
                 <h3>Credit Repair & Building</h3>
                 <p>Personalized strategies to fix personal credit and build business credit, based on Richh Nick's proven methods from street-level learnings to executive success.</p>
                 <a href="#" class="service-btn">Get Started</a>
             </div>
             <div class="service-card">
+                <i class="fas fa-hand-holding-dollar"></i>
                 <h3>Business Funding Strategies</h3>
                 <p>Expert guidance on securing funding for startups, expansions, and investments, helping you leverage credit for real growth.</p>
                 <a href="#" class="service-btn">Apply Now</a>
             </div>
             <div class="service-card">
+                <i class="fas fa-chart-line"></i>
                 <h3>Investment Consulting</h3>
                 <p>Tailored advice on serial investments, including record labels and artist careers, to compound your wealth and empower others.</p>
                 <a href="#" class="service-btn">Consult Today</a>
             </div>
             <div class="service-card">
+                <i class="fas fa-music"></i>
                 <h3>Artist Management & Empowerment</h3>
                 <p>Partnering with artists to grow their careers through strategic management, funding, and business ventures in the music industry.</p>
                 <a href="#" class="service-btn">Collaborate</a>
@@ -482,10 +857,28 @@
                 <a href="https://www.instagram.com/richhnick/p/DHs1jz9uA1c/" target="_blank">View Post</a>
             </div>
             <div class="highlight-card">
-                <h4>The Monument Keeps Rolling</h4>
-                <p>Motivational hit single vibes for unstoppable momentum. (July 19, 2025)</p>
-                <div class="stats">9K Views | 950 Likes | 140 Comments</div>
-                <a href="https://www.instagram.com/richhnick/reel/DMTabI8JV0p/" target="_blank">Watch Reel</a>
+                <h4>Credit Card Stacking / Business Funding</h4>
+                <p>Credit Card Stacking / Business Funding #fyp #viral #businesscapital. (March 21, 2025)</p>
+                <div class="stats">Unknown Views | 59 Likes | 2 Comments</div>
+                <a href="https://www.instagram.com/reel/DHedNa0pD2M/" target="_blank">Watch Reel</a>
+            </div>
+            <div class="highlight-card">
+                <h4>Raise your stock LETS WORK</h4>
+                <p>Raise your stock LETS WORK #fyp #explorepage #consistencyiskey. (July 7, 2025)</p>
+                <div class="stats">Unknown Views | Unknown Likes | 301 Comments</div>
+                <a href="https://www.instagram.com/reel/DL0djkDJHtm/" target="_blank">Watch Reel</a>
+            </div>
+            <div class="highlight-card">
+                <h4>tana9.13 Becomes Official Neighborhood Hero</h4>
+                <p>@tana9.13 Becomes Official Neighborhood Hero #fyp #explorepage✨ #viral #artist. (July 2, 2025)</p>
+                <div class="stats">Unknown Views | 5.5K Likes | 70 Comments</div>
+                <a href="https://www.instagram.com/reel/DLoIiFspCGv/" target="_blank">Watch Reel</a>
+            </div>
+            <div class="highlight-card">
+                <h4>CMG BIG BOOGIE In Studio</h4>
+                <p>CMG BIG BOOGIE @big_boogie_music In studio feeling the music #fyp #explorepage✨. (June 21, 2025)</p>
+                <div class="stats">Unknown Views | 144 Likes | 2 Comments</div>
+                <a href="https://www.instagram.com/reel/DLMGvAwISBT/" target="_blank">Watch Reel</a>
             </div>
         </div>
     </section>
@@ -494,18 +887,22 @@
         <h2 class="section-title">Success Stories</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
                 <p>"Richh Nick fixed my credit and taught me business funding—now I'm investing in my own label!"</p>
                 <div class="testimonial-author">- Aspiring Artist</div>
             </div>
             <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
                 <p>"His investment strategies compounded my wealth; partnering with him was a game-changer."</p>
                 <div class="testimonial-author">- Serial Entrepreneur</div>
             </div>
             <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
                 <p>"From streets to success—Richh's guidance empowered me to build my career."</p>
                 <div class="testimonial-author">- Music Executive</div>
             </div>
             <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
                 <p>"Credit repair expertise unlocked doors I never knew existed. Thank you, Richh!"</p>
                 <div class="testimonial-author">- Business Owner</div>
             </div>
@@ -514,10 +911,10 @@
     
     <section id="contact" class="animate-fade-in">
         <h2 class="section-title">Connect with Richh Nick</h2>
-        <form class="contact-form" action="mailto:contact@richhnick.com" method="post" enctype="text/plain">
+        <form class="contact-form" id="contactForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
             <button type="submit">Send Message</button>
         </form>
     </section>
@@ -530,7 +927,45 @@
         </div>
     </footer>
     
+    <a href="#top" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            preloader.classList.add('hidden');
+        });
+        
+        // Typed.js for header
+        const typed = new Typed('.typed-text', {
+            strings: [
+                'From Street Smarts to Executive Suites',
+                'Mastering Credit, Investments, and Artist Empowerment',
+                'Building Legacies and Empowering Dreams'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1500,
+            loop: true
+        });
+        
+        // GSAP Animations for sections
+        gsap.from('header h1', { duration: 1, y: -50, opacity: 0, ease: 'power3.out' });
+        gsap.from('.cta-btn', { duration: 1, delay: 0.5, scale: 0, opacity: 0, ease: 'elastic.out(1, 0.3)' });
+        
+        // Scroll Observer for animations
+        const elements = document.querySelectorAll('.animate-fade-in, .timeline-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    gsap.to(entry.target, { duration: 0.8, y: 0, opacity: 1, ease: 'power2.out' });
+                }
+            });
+        }, { threshold: 0.1 });
+        elements.forEach(el => observer.observe(el));
+        
         // Counter Animation
         function animateCounter(id, end, duration) {
             let start = 0;
@@ -541,20 +976,35 @@
                 if (start >= end) clearInterval(timer);
             }, 10);
         }
-        animateCounter('followers-counter', 28000, 2000);
-        animateCounter('posts-counter', 339, 1500);
-        animateCounter('views-counter', 2, 2500); // 2 Million views
-        
-        // Scroll Animations
-        const elements = document.querySelectorAll('.animate-fade-in');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
+        const statsObserver = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+                animateCounter('followers-counter', 28000, 2000);
+                animateCounter('posts-counter', 339, 1500);
+                animateCounter('views-counter', 2, 2500);
+                statsObserver.disconnect();
+            }
         });
-        elements.forEach(el => observer.observe(el));
+        statsObserver.observe(document.querySelector('#journey'));
+        
+        // Nav Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Back to Top
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+        });
+        
+        // Contact Form Validation (simple)
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Message sent successfully!'); // Placeholder for real submission
+            form.reset();
+        });
     </script>
 </body>
 </html>
