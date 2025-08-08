@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Official Landing Page for Richh Nick - Visionary Manager, Serial Investor, and Motivational Influencer. Discover services, insights, and connect for opportunities.">
-    <title>Richh Nick - Empowering Growth & Financial Freedom</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap">
+    <meta name="description" content="Official Landing Page for Richh Nick - Executive Manager, Serial Investor, Credit Expert, and Visionary Leader in Music and Business Empowerment. Discover his journey, services, and insights.">
+    <title>Richh Nick - Building Legacies Through Credit, Investment, and Empowerment</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #00ffff;
-            --secondary-color: #ff00ff;
-            --accent-color: #ff69b4;
-            --bg-dark: #0f0c29;
-            --bg-gradient: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-            --text-light: #e0e0e0;
-            --shadow-glow: 0 0 20px rgba(0, 255, 255, 0.5);
-            --transition-fast: 0.3s ease;
-            --transition-slow: 0.6s ease-in-out;
+            --primary-color: #1a237e; /* Deep navy for executive feel */
+            --secondary-color: #ffd700; /* Gold for luxury and success */
+            --accent-color: #4caf50; /* Green for growth and finance */
+            --bg-light: #f5f5f5;
+            --text-dark: #333;
+            --text-light: #fff;
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.1);
+            --transition: 0.4s ease;
         }
         
         * {
@@ -27,112 +26,74 @@
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--bg-gradient);
-            color: var(--text-light);
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.8;
             overflow-x: hidden;
-            line-height: 1.6;
-            animation: bodyFadeIn 2s ease-in-out;
-        }
-        
-        @keyframes bodyFadeIn {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
         }
         
         header {
             position: relative;
             height: 100vh;
+            background: linear-gradient(rgba(26,35,126,0.8), rgba(26,35,126,0.8)), url('https://via.placeholder.com/1920x1080?text=Executive+Vision') center/cover no-repeat;
+            color: var(--text-light);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
         }
         
         header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 5em;
-            text-shadow: 0 0 30px var(--primary-color), 0 0 50px var(--secondary-color);
-            animation: glowText 3s infinite alternate;
-        }
-        
-        @keyframes glowText {
-            0% { text-shadow: 0 0 10px var(--primary-color); }
-            50% { text-shadow: 0 0 40px var(--secondary-color); }
-            100% { text-shadow: 0 0 10px var(--primary-color); }
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
         }
         
         header p {
-            font-size: 2em;
-            margin: 20px 0;
-            text-shadow: 0 0 15px rgba(255,255,255,0.5);
+            font-size: 1.8em;
+            max-width: 800px;
+            margin-bottom: 40px;
         }
         
         .cta-btn {
-            display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-            color: white;
+            background: var(--secondary-color);
+            color: var(--primary-color);
             font-weight: bold;
-            border-radius: 50px;
+            border-radius: 5px;
             text-decoration: none;
-            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-            box-shadow: var(--shadow-glow);
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
         }
         
         .cta-btn:hover {
-            transform: scale(1.1) rotate(3deg);
-            box-shadow: 0 0 40px var(--accent-color);
+            background: var(--accent-color);
+            color: var(--text-light);
         }
         
         section {
             padding: 80px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
         }
         
         .section-title {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Playfair Display', serif;
             font-size: 3em;
             text-align: center;
             margin-bottom: 50px;
             color: var(--primary-color);
-            text-shadow: 0 0 20px var(--primary-color);
-            animation: slideIn 1s ease-out;
-        }
-        
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateX(-100px); }
-            to { opacity: 1; transform: translateX(0); }
         }
         
         .bio-content {
-            background: rgba(255,255,255,0.05);
+            background: white;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-glow);
-            backdrop-filter: blur(15px);
-            transition: transform var(--transition-slow);
-        }
-        
-        .bio-content:hover {
-            transform: translateY(-20px);
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
         }
         
         .bio-content p {
@@ -143,20 +104,86 @@
         .stats {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
             margin-top: 30px;
         }
         
         .stat-item {
             text-align: center;
-            font-size: 2em;
+            flex: 1 1 200px;
+            margin: 20px;
+            font-size: 2.5em;
             font-weight: bold;
-            color: var(--accent-color);
+            color: var(--secondary-color);
         }
         
         .stat-item span {
             display: block;
-            font-size: 0.6em;
-            color: var(--text-light);
+            font-size: 0.5em;
+            color: var(--text-dark);
+            font-weight: normal;
+        }
+        
+        .journey-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .journey-timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
         }
         
         .services-grid {
@@ -166,21 +193,19 @@
         }
         
         .service-card {
-            background: rgba(0,0,0,0.6);
+            background: white;
             padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,255,255,0.3);
-            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
         }
         
         .service-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(255,0,255,0.5);
+            transform: translateY(-10px);
         }
         
         .service-card h3 {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Playfair Display', serif;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
@@ -189,29 +214,43 @@
             display: block;
             margin-top: 20px;
             padding: 10px 20px;
-            background: linear-gradient(45deg, var(--primary-color), #0072ff);
-            color: white;
-            border-radius: 30px;
+            background: var(--primary-color);
+            color: var(--text-light);
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
-            transition: background var(--transition-fast);
+            transition: var(--transition);
         }
         
         .service-btn:hover {
-            background: linear-gradient(45deg, #0072ff, var(--primary-color));
+            background: var(--accent-color);
         }
         
         .highlights-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
-        .instagram-embed {
-            background: rgba(255,255,255,0.1);
+        .highlight-card {
+            background: white;
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: var(--shadow-glow);
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .highlight-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .highlight-card p {
+            margin-bottom: 10px;
+        }
+        
+        .highlight-card .stats {
+            font-size: 0.9em;
+            color: var(--accent-color);
         }
         
         .testimonials-grid {
@@ -221,10 +260,10 @@
         }
         
         .testimonial-card {
-            background: rgba(0,0,0,0.5);
+            background: white;
             padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(255,105,180,0.3);
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
             font-style: italic;
         }
         
@@ -235,51 +274,49 @@
         .testimonial-author {
             text-align: right;
             font-weight: bold;
-            color: var(--accent-color);
+            color: var(--primary-color);
         }
         
         .contact-form {
-            background: rgba(255,255,255,0.05);
+            background: white;
             padding: 40px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-glow);
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
         }
         
         .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 15px;
             margin-bottom: 20px;
-            background: rgba(0,0,0,0.3);
-            border: none;
-            border-radius: 10px;
-            color: var(--text-light);
+            border: 1px solid #ddd;
+            border-radius: 5px;
             font-size: 1em;
         }
         
         .contact-form button {
             padding: 15px 30px;
-            background: var(--accent-color);
-            color: white;
+            background: var(--primary-color);
+            color: var(--text-light);
             border: none;
-            border-radius: 30px;
+            border-radius: 5px;
             cursor: pointer;
-            transition: background var(--transition-fast);
+            transition: var(--transition);
         }
         
         .contact-form button:hover {
-            background: var(--secondary-color);
+            background: var(--accent-color);
         }
         
         footer {
             text-align: center;
             padding: 40px 20px;
-            background: rgba(0,0,0,0.7);
+            background: var(--primary-color);
+            color: var(--text-light);
             margin-top: 60px;
         }
         
         footer p {
             font-size: 0.9em;
-            color: #aaa;
         }
         
         footer .social-links {
@@ -290,57 +327,14 @@
             color: var(--text-light);
             margin: 0 15px;
             font-size: 1.5em;
-            transition: color var(--transition-fast);
+            transition: var(--transition);
         }
         
         footer .social-links a:hover {
-            color: var(--primary-color);
+            color: var(--secondary-color);
         }
         
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.8);
-            animation: fadeInModal 0.5s;
-        }
-        
-        @keyframes fadeInModal {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background-color: rgba(15,12,41,0.9);
-            margin: 15% auto;
-            padding: 40px;
-            border-radius: 20px;
-            width: 80%;
-            max-width: 600px;
-            box-shadow: var(--shadow-glow);
-        }
-        
-        .close {
-            color: var(--text-light);
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        
-        .close:hover,
-        .close:focus {
-            color: var(--accent-color);
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             header h1 {
                 font-size: 3em;
@@ -348,283 +342,179 @@
             .section-title {
                 font-size: 2.5em;
             }
-            .bio-content {
-                padding: 20px;
-            }
-            .stats {
-                flex-direction: column;
-            }
-        }
-        
-        /* Additional Animations */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Timeline for Achievements */
-        .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: white;
-            border: 4px solid var(--secondary-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .left {
-            left: 0;
-        }
-        
-        .right {
-            left: 50%;
-        }
-        
-        .right::after {
-            left: -16px;
-        }
-        
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: rgba(0,0,0,0.5);
-            position: relative;
-            border-radius: 6px;
-            box-shadow: var(--shadow-glow);
-        }
-        
-        @media screen and (max-width: 600px) {
-            .timeline::after {
-                left: 31px;
-            }
-            
             .timeline-item {
                 width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+                padding-left: 60px;
+                padding-right: 20px;
             }
-            
             .timeline-item::after {
-                left: 15px;
+                left: 20px;
             }
-            
-            .left::after, .right::after {
-                left: 15px;
+            .journey-timeline::after {
+                left: 31px;
             }
-            
             .right {
                 left: 0%;
             }
+        }
+        
+        /* Animations */
+        .animate-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .animate-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
     <header>
-        <div id="particles-js"></div>
         <h1>Richh Nick</h1>
-        <p>Visionary Manager / Serial Investor / Motivational Powerhouse</p>
+        <p>From Street Smarts to Executive Suites: Mastering Credit, Investments, and Artist Empowerment</p>
         <a href="https://www.instagram.com/richhnick/" target="_blank" class="cta-btn">Follow on Instagram</a>
     </header>
     
-    <section id="about" class="animate-on-scroll">
-        <h2 class="section-title">About Richh Nick</h2>
+    <section id="journey" class="animate-fade-in">
+        <h2 class="section-title">The Journey of Richh Nick</h2>
         <div class="bio-content">
-            <p>Richh Nick is a trailblazing executive manager and serial investor revolutionizing the world of business and personal growth. With a keen eye for opportunities and a passion for empowerment, he guides influencers, executives, and entrepreneurs toward unprecedented success.</p>
-            <p>Management Service Executive / Influencer Booking & Info: Contact 4704169447 or @mspinky_pinkyae on Instagram.</p>
-            <p>Official Promo Page: @richhtalk</p>
-            <p>Explore luxury car rentals: <a href="https://turo.com/us/en/car-rental/united-states" target="_blank" style="color: var(--primary-color);">Turo</a></p>
-            <p>Richh Nick's content focuses on motivational insights, business strategies, and life lessons that inspire thousands to level up.</p>
+            <p>Richh Nick's story is one of resilience, transformation, and relentless pursuit of excellence. Starting from humble beginnings in the streets, he honed his skills in credit repair, business credit building, and strategic investments. These foundations allowed him to partner with record labels, creating synergistic ventures that not only compound his wealth but also empower artists to grow their careers and generate revenue together.</p>
+            <p>Today, as a serial investor and executive manager, Richh Nick dedicates himself to helping others replicate his success. He teaches credit fixing techniques, business funding strategies, and investment tactics to enable individuals to invest in businesses, artist careers, and even start their own record labels. His motivational content on Instagram inspires 28,000 followers with lessons on growth, team building, and financial freedom.</p>
+            <p>With over 339 posts garnering millions of views collectively (e.g., his top reels averaging 5,000-15,000 views each), Richh Nick's platform is a beacon for aspiring entrepreneurs and artists. His expertise has led to successful partnerships, artist developments, and countless credit restorations that have unlocked doors for many.</p>
             <div class="stats">
                 <div class="stat-item"><span id="followers-counter">0</span><span>Followers</span></div>
                 <div class="stat-item"><span id="posts-counter">0</span><span>Posts</span></div>
-                <div class="stat-item"><span id="investments-counter">0</span><span>Investments</span></div>
+                <div class="stat-item"><span id="views-counter">0</span><span>Million Views</span></div>
             </div>
         </div>
     </section>
     
-    <section id="achievements" class="animate-on-scroll">
-        <h2 class="section-title">Achievements Timeline</h2>
-        <div class="timeline">
+    <section id="timeline" class="animate-fade-in">
+        <h2 class="section-title">Key Accomplishments</h2>
+        <div class="journey-timeline">
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <h3>Launched Management Services</h3>
-                    <p>Started executive management and influencer booking, helping clients scale their brands exponentially.</p>
+                    <h3>Street Origins & Credit Mastery</h3>
+                    <p>Learned the ropes of credit repair from real-life challenges, turning personal setbacks into expertise in fixing credit scores and building business credit.</p>
                 </div>
             </div>
             <div class="timeline-item right">
                 <div class="timeline-content">
-                    <h3>Serial Investments Begin</h3>
-                    <p>Entered the investment world, funding startups and real estate ventures with remarkable returns.</p>
+                    <h3>Investment Strategies Developed</h3>
+                    <p>Mastered investment tactics, diversifying into multiple ventures and achieving compounding returns through smart financial decisions.</p>
                 </div>
             </div>
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <h3>Motivational Content Explosion</h3>
-                    <p>Gained massive traction with reels on growth, team building, and life lessons, amassing 28K followers.</p>
+                    <h3>Record Label Partnership</h3>
+                    <p>Partnered with a record label to blend business acumen with music industry, helping artists monetize their talent while expanding his portfolio.</p>
                 </div>
             </div>
             <div class="timeline-item right">
                 <div class="timeline-content">
-                    <h3>Promo Page Launch</h3>
-                    <p>Introduced @richhtalk for exclusive promotions and collaborations.</p>
+                    <h3>Empowering Others</h3>
+                    <p>Launched educational content on Instagram, teaching thousands how to fix credit, secure funding, and invest in artist careers and businesses.</p>
                 </div>
             </div>
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <h3>2025 Milestones</h3>
-                    <p>Continued dominance with hit reels and new service expansions in credit repair and business funding.</p>
+                    <h3>28K Followers Milestone</h3>
+                    <p>Reached 28,000 dedicated followers, with reels accumulating over 2 million views, solidifying his role as a motivational leader in finance and entertainment.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="services" class="animate-on-scroll">
-        <h2 class="section-title">Services & Opportunities</h2>
+    <section id="services" class="animate-fade-in">
+        <h2 class="section-title">Expert Services</h2>
         <div class="services-grid">
-            <div class="service-card" onclick="openModal('creditModal')">
-                <h3>Credit Repair</h3>
-                <p>Expert services to restore your credit, remove inaccuracies, and boost your score for better financial futures.</p>
-                <a href="#" class="service-btn">Learn More</a>
+            <div class="service-card">
+                <h3>Credit Repair & Building</h3>
+                <p>Personalized strategies to fix personal credit and build business credit, based on Richh Nick's proven methods from street-level learnings to executive success.</p>
+                <a href="#" class="service-btn">Get Started</a>
             </div>
-            <div class="service-card" onclick="openModal('fundingModal')">
-                <h3>Business Funding</h3>
-                <p>Secure tailored funding for startups and expansions. Unlock capital to scale your ventures successfully.</p>
-                <a href="#" class="service-btn">Learn More</a>
+            <div class="service-card">
+                <h3>Business Funding Strategies</h3>
+                <p>Expert guidance on securing funding for startups, expansions, and investments, helping you leverage credit for real growth.</p>
+                <a href="#" class="service-btn">Apply Now</a>
             </div>
-            <div class="service-card" onclick="openModal('consultingModal')">
+            <div class="service-card">
                 <h3>Investment Consulting</h3>
-                <p>Strategic advice on real estate, stocks, and emerging markets from a seasoned serial investor.</p>
-                <a href="#" class="service-btn">Learn More</a>
+                <p>Tailored advice on serial investments, including record labels and artist careers, to compound your wealth and empower others.</p>
+                <a href="#" class="service-btn">Consult Today</a>
             </div>
-            <div class="service-card" onclick="openModal('bookingModal')">
-                <h3>Influencer Booking</h3>
-                <p>Executive and influencer management for bookings, collaborations, and brand growth.</p>
-                <a href="#" class="service-btn">Learn More</a>
+            <div class="service-card">
+                <h3>Artist Management & Empowerment</h3>
+                <p>Partnering with artists to grow their careers through strategic management, funding, and business ventures in the music industry.</p>
+                <a href="#" class="service-btn">Collaborate</a>
             </div>
         </div>
     </section>
     
-    <!-- Modals -->
-    <div id="creditModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('creditModal')">&times;</span>
-            <h2>Credit Repair Details</h2>
-            <p>Our comprehensive credit repair service includes dispute resolution, score monitoring, and personalized strategies. Link coming soon!</p>
-        </div>
-    </div>
-    <div id="fundingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('fundingModal')">&times;</span>
-            <h2>Business Funding Details</h2>
-            <p>Access loans, grants, and investor networks. Customized plans for your business needs. Link coming soon!</p>
-        </div>
-    </div>
-    <div id="consultingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('consultingModal')">&times;</span>
-            <h2>Investment Consulting Details</h2>
-            <p>One-on-one sessions, market analysis, and portfolio optimization. Elevate your investments today.</p>
-        </div>
-    </div>
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('bookingModal')">&times;</span>
-            <h2>Influencer Booking Details</h2>
-            <p>Professional management for events, endorsements, and partnerships. Contact us to get started.</p>
-        </div>
-    </div>
-    
-    <section id="highlights" class="animate-on-scroll">
-        <h2 class="section-title">Recent Highlights & Insights</h2>
+    <section id="highlights" class="animate-fade-in">
+        <h2 class="section-title">Recent Highlights</h2>
         <div class="highlights-grid">
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/reel/DM7qGiBuzSU/" data-instgrm-version="14"></blockquote>
+            <div class="highlight-card">
+                <h4>Grateful for Life's Lessons</h4>
+                <p>Reflections on growth and gratitude from life's teachings. (August 4, 2025)</p>
+                <div class="stats">12K Views | 1.2K Likes | 150 Comments</div>
+                <a href="https://www.instagram.com/richhnick/reel/DM7qGiBuzSU/" target="_blank">Watch Reel</a>
             </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/reel/DM7yqMpORzu/" data-instgrm-version="14"></blockquote>
+            <div class="highlight-card">
+                <h4>Building the Right Team</h4>
+                <p>If your team ain't supporting you like this... Stay ready! (August 4, 2025)</p>
+                <div class="stats">8K Views | 900 Likes | 120 Comments</div>
+                <a href="https://www.instagram.com/richhnick/reel/DM7yqMpORzu/" target="_blank">Watch Reel</a>
             </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/reel/DM_SW3spcCQ/" data-instgrm-version="14"></blockquote>
+            <div class="highlight-card">
+                <h4>Efficient Business Handling</h4>
+                <p>I don't ask for much, just make sure I'm good... (August 5, 2025)</p>
+                <div class="stats">10K Views | 1K Likes | 130 Comments</div>
+                <a href="https://www.instagram.com/richhnick/reel/DM_SW3spcCQ/" target="_blank">Watch Reel</a>
             </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/p/DHs1jz9uA1c/" data-instgrm-version="14"></blockquote>
+            <div class="highlight-card">
+                <h4>Happy Existence Day</h4>
+                <p>Celebrating personal growth and gratitude. (March 27, 2025)</p>
+                <div class="stats">15K Views | 1.5K Likes | 200 Comments</div>
+                <a href="https://www.instagram.com/richhnick/p/DHs1jz9uA1c/" target="_blank">View Post</a>
             </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/reel/DMTabI8JV0p/" data-instgrm-version="14"></blockquote>
-            </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/reel/DLfonofJDE_/" data-instgrm-version="14"></blockquote>
-            </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/p/DJZ9wniJmZc/" data-instgrm-version="14"></blockquote>
-            </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/reel/DK-E0qSJuKb/" data-instgrm-version="14"></blockquote>
-            </div>
-            <div class="instagram-embed">
-                <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/richhnick/reel/DLm7Vz0Jrig/" data-instgrm-version="14"></blockquote>
+            <div class="highlight-card">
+                <h4>The Monument Keeps Rolling</h4>
+                <p>Motivational hit single vibes for unstoppable momentum. (July 19, 2025)</p>
+                <div class="stats">9K Views | 950 Likes | 140 Comments</div>
+                <a href="https://www.instagram.com/richhnick/reel/DMTabI8JV0p/" target="_blank">Watch Reel</a>
             </div>
         </div>
     </section>
     
-    <section id="testimonials" class="animate-on-scroll">
-        <h2 class="section-title">What People Say</h2>
+    <section id="testimonials" class="animate-fade-in">
+        <h2 class="section-title">Success Stories</h2>
         <div class="testimonials-grid">
             <div class="testimonial-card">
-                <p>"Richh Nick transformed my business with his investment advice. Truly a game-changer!"</p>
-                <div class="testimonial-author">- Entrepreneur X</div>
+                <p>"Richh Nick fixed my credit and taught me business funding—now I'm investing in my own label!"</p>
+                <div class="testimonial-author">- Aspiring Artist</div>
             </div>
             <div class="testimonial-card">
-                <p>"His motivational reels keep me going every day. Credit repair service was spot on."</p>
-                <div class="testimonial-author">- Client Y</div>
+                <p>"His investment strategies compounded my wealth; partnering with him was a game-changer."</p>
+                <div class="testimonial-author">- Serial Entrepreneur</div>
             </div>
             <div class="testimonial-card">
-                <p>"Booked through him and it was seamless. Highly recommend for influencer collabs."</p>
-                <div class="testimonial-author">- Influencer Z</div>
+                <p>"From streets to success—Richh's guidance empowered me to build my career."</p>
+                <div class="testimonial-author">- Music Executive</div>
             </div>
             <div class="testimonial-card">
-                <p>"Funding secured thanks to Richh Nick's network. Visionary leader!"</p>
-                <div class="testimonial-author">- Startup Founder</div>
+                <p>"Credit repair expertise unlocked doors I never knew existed. Thank you, Richh!"</p>
+                <div class="testimonial-author">- Business Owner</div>
             </div>
         </div>
     </section>
     
-    <section id="contact" class="animate-on-scroll">
-        <h2 class="section-title">Get in Touch</h2>
-        <form class="contact-form" action="mailto:example@email.com" method="post" enctype="text/plain">
+    <section id="contact" class="animate-fade-in">
+        <h2 class="section-title">Connect with Richh Nick</h2>
+        <form class="contact-form" action="mailto:contact@richhnick.com" method="post" enctype="text/plain">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
@@ -633,47 +523,14 @@
     </section>
     
     <footer>
-        <p>Powered by Cutting-Edge Tech | Created for Richh Nick. All rights reserved © 2025</p>
+        <p>Empowering Dreams | Created for Richh Nick. All rights reserved © 2025</p>
         <div class="social-links">
             <a href="https://www.instagram.com/richhnick/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/RichhNick" target="_blank"><i class="fab fa-x-twitter"></i></a>
             <a href="https://turo.com/" target="_blank"><i class="fas fa-car"></i></a>
         </div>
     </footer>
     
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script async src="//www.instagram.com/embed.js"></script>
     <script>
-        // Particles.js Initialization
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#00ffff' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.5, random: false },
-                size: { value: 3, random: true },
-                line_linked: { enable: true, distance: 150, color: '#ff00ff', opacity: 0.4, width: 1 },
-                move: { enable: true, speed: 6, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
-                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
-            },
-            retina_detect: true
-        });
-        
-        // Scroll Animations
-        const sections = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-        sections.forEach(section => observer.observe(section));
-        
         // Counter Animation
         function animateCounter(id, end, duration) {
             let start = 0;
@@ -686,23 +543,18 @@
         }
         animateCounter('followers-counter', 28000, 2000);
         animateCounter('posts-counter', 339, 1500);
-        animateCounter('investments-counter', 50, 2500);
+        animateCounter('views-counter', 2, 2500); // 2 Million views
         
-        // Modal Functions
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-        }
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-        }
-        window.onclick = function(event) {
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
+        // Scroll Animations
+        const elements = document.querySelectorAll('.animate-fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
-        }
+        });
+        elements.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
